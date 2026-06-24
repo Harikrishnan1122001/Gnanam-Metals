@@ -1,7 +1,8 @@
 [build]
-  command = "npx react-scripts build"
+  command = "npm install --legacy-peer-deps && ./node_modules/.bin/react-scripts build"
   publish = "build"
 
 [build.environment]
   CI = "false"
   NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
