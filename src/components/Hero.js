@@ -85,7 +85,7 @@ const Hero = () => {
         <div className="hero-left">
           <div className="hero-badge">
             <span className="badge-dot" />
-            Theni's Premier Metal Supplier
+            Theni's Best Metal Supplier
           </div>
 
           <h1 className="hero-title">
