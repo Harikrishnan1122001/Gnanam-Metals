@@ -1,0 +1,203 @@
+.contact {
+  background: var(--navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(26,111,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-header { margin-bottom: 64px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Info Card */
+.info-card {
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.info-heading {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.info-items { display: flex; flex-direction: column; gap: 22px; }
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.info-icon {
+  width: 40px; height: 40px;
+  background: rgba(26,111,255,0.12);
+  border: 1px solid rgba(26,111,255,0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-electric);
+  flex-shrink: 0;
+}
+
+.info-item > div:last-child {
+  display: flex; flex-direction: column; gap: 3px;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(200,216,240,0.45);
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.info-val {
+  font-size: 14px;
+  color: rgba(200,216,240,0.85);
+  line-height: 1.5;
+}
+
+.info-link {
+  color: var(--blue-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.info-link:hover { color: #fff; }
+
+/* WhatsApp */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(37,211,102,0.4);
+}
+
+/* Form */
+.contact-form {
+  background: var(--navy-mid);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(200,216,240,0.65);
+  letter-spacing: 0.8px;
+}
+
+.form-input {
+  padding: 12px 16px;
+  background: rgba(3,8,15,0.6);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input::placeholder { color: rgba(200,216,240,0.3); }
+
+.form-input:focus {
+  border-color: var(--blue-electric);
+  background: rgba(26,111,255,0.05);
+  box-shadow: 0 0 0 3px rgba(26,111,255,0.12);
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234d9fff' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+.form-select option { background: #0d1f3c; color: #fff; }
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+.form-submit {
+  width: 100%;
+  justify-content: center;
+  font-size: 17px !important;
+  padding: 16px !important;
+  background: linear-gradient(135deg, #1a6fff, #0d4db3) !important;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+.form-submit:hover {
+  background: linear-gradient(135deg, #2a7fff, #1a6fff) !important;
+  box-shadow: 0 8px 32px rgba(26,111,255,0.4) !important;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 24px; }
+}

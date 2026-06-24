@@ -1,0 +1,192 @@
+.products {
+  background: var(--navy-deep);
+  position: relative;
+}
+
+.products::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 80% 50%, rgba(26,111,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.products-header {
+  margin-bottom: 48px;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.filter-tab {
+  padding: 9px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(200,216,240,0.65);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.filter-tab:hover {
+  border-color: var(--border);
+  color: #fff;
+}
+
+.filter-tab.active {
+  background: var(--blue-electric);
+  border-color: var(--blue-electric);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(26,111,255,0.35);
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* Product Card */
+.product-card {
+  background: var(--navy-mid);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-electric), var(--blue-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+.product-card:hover::after { transform: scaleX(1); }
+
+.product-card.featured {
+  border-color: rgba(26,111,255,0.4);
+  background: linear-gradient(135deg, var(--navy-mid), rgba(26,111,255,0.05));
+}
+
+.featured-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  padding: 3px 10px;
+  background: rgba(26,111,255,0.2);
+  border: 1px solid rgba(26,111,255,0.4);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #4d9fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pcard-icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: rgba(var(--pcolor), 0.1);
+  border: 1px solid rgba(26,111,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  background: linear-gradient(135deg, rgba(26,111,255,0.12), rgba(26,111,255,0.05));
+  transition: transform 0.3s ease;
+}
+.product-card:hover .pcard-icon-wrap { transform: scale(1.1) rotate(5deg); }
+
+.pcard-body { flex: 1; }
+
+.pcard-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 3px;
+}
+
+.pcard-sub {
+  font-size: 12px;
+  color: rgba(200,216,240,0.5);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.pcard-specs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pcard-specs li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(200,216,240,0.7);
+}
+
+.spec-dot {
+  width: 5px; height: 5px;
+  background: var(--blue-electric);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pcard-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background: rgba(26,111,255,0.1);
+  border: 1px solid rgba(26,111,255,0.25);
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue-accent);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.pcard-cta:hover {
+  background: var(--blue-electric);
+  border-color: var(--blue-electric);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(26,111,255,0.3);
+}
+
+@media (max-width: 600px) {
+  .products-grid { grid-template-columns: 1fr; }
+}
